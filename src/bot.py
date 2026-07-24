@@ -16,6 +16,11 @@ def place_randomly():
             valid = True
     return pos1, pos2
 
+def simulate_position():
+    for y in range(15):
+        for x in range(15):
+            pass
+
 def analyze():
     """
     *** Roadmap ***
@@ -35,31 +40,31 @@ def analyze():
     """
 
     # Get 5
-    scanned = sc.generate_scan([0, 1, 1, 1, 1, 0], g.bot_color)
+    scanned = sc.generate_scan([0, 1, 1, 1, 1, 0], g.bot_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
     # Block closed 4
-    scanned = sc.generate_scan([0, 1, 1, 1, 1], g.player_color)
+    scanned = sc.generate_scan([0, 1, 1, 1, 1], g.player_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
     # Get closed/open 4
-    scanned = sc.generate_scan([0, 1, 1, 1], g.bot_color)
+    scanned = sc.generate_scan([0, 1, 1, 1], g.bot_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
     # Block open 3
-    scanned = sc.generate_scan([0, 1, 1, 1, 0], g.player_color)
+    scanned = sc.generate_scan([0, 1, 1, 1, 0], g.player_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
     # Get Open 3
-    scanned = sc.generate_scan([0, 1, 1], g.bot_color)
+    scanned = sc.generate_scan([0, 1, 1], g.bot_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
     # Block closed 3
-    scanned = sc.generate_scan([0, 1, 1, 1, -1], g.player_color)
+    scanned = sc.generate_scan([0, 1, 1, 1, -1], g.player_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
     # Get closed 3
-    scanned = sc.generate_scan([0, 1, 1, -1], g.bot_color)
+    scanned = sc.generate_scan([0, 1, 1, -1], g.bot_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
     # Get 2 in a row

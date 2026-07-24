@@ -2,7 +2,7 @@ import random
 
 import global_data as g
 
-def scan_board(x, y, pattern): # now this is the hard part.
+def scan_board(x, y, pattern, board_position): # now this is the hard part.
     reverse = []
     for item in pattern:
         reverse.append(-item)
@@ -16,7 +16,7 @@ def scan_board(x, y, pattern): # now this is the hard part.
         status_list = []
         for item in dir_scan_list:
             if not (item[0] < 0 or item[0] > 14 or item[1] < 0 or item[1] > 14):
-                status_list.append(g.boardPositions[item[1]][item[0]])
+                status_list.append(board_position[item[1]][item[0]])
         scan_list.append(status_list)
     # Compares the list to the given pattern
     for item in scan_list:
@@ -26,12 +26,12 @@ def scan_board(x, y, pattern): # now this is the hard part.
             return -1
     return None
 
-def generate_scan(pattern, color): # pattern has to be 6 characters.
+def generate_scan(pattern, color, board_position): # pattern has to be 6 characters.
     items = 0
     pos_list = []
     for y in range(15):
         for x in range(15):
-            scan = scan_board(x, y, pattern)
+            scan = scan_board(x, y, pattern, board_position)
             if scan == -1 or scan == 1:
                 items += 1
                 pos_list.append((scan, (x, y))) # Appends to the list color of the combination and the coordinates.
