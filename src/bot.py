@@ -39,7 +39,7 @@ def analyze():
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
     # Block closed 4
-    scanned = sc.generate_scan([0, 1, 1, 1, 1, -1], g.player_color)
+    scanned = sc.generate_scan([0, 1, 1, 1, 1], g.player_color)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
     # Get closed/open 4
