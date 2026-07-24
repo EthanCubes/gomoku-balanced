@@ -6,10 +6,9 @@ def scan_board(x, y, pattern, board_position): # now this is the hard part.
     reverse = []
     for item in pattern:
         reverse.append(-item)
-    dlist = [(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1),(-1,0),(-1,1)] # set up scanning in all 8 directions
     scan_list = []
     # Gets the status and puts it in a list
-    for direction in dlist:
+    for direction in g.DIRECTION_LIST:
         dir_scan_list = [] # directional scan
         for i in range(len(pattern)):
             dir_scan_list.append((x+i*int(direction[0]), y+i*int(direction[1])))
@@ -19,20 +18,24 @@ def scan_board(x, y, pattern, board_position): # now this is the hard part.
                 status_list.append(board_position[item[1]][item[0]])
         scan_list.append(status_list)
     # Compares the list to the given pattern
+    i = 0
     for item in scan_list:
         if item == pattern:
-            return 1
+            return 1, i
         elif item == reverse:
-            return -1
+            return -1, i
+        i += 1
     return None
 
-def generate_scan(pattern, color, board_position): # pattern has to be 6 characters.
+def generate_scan(pattern, color, board_position):
     items = 0
     pos_list = []
     for y in range(15):
         for x in range(15):
             scan = scan_board(x, y, pattern, board_position)
-            if scan == -1 or scan == 1:
+            if scan is None:
+                continue
+            if scan[0] == -1 or scan[0] == 1:
                 items += 1
                 pos_list.append((scan, (x, y))) # Appends to the list color of the combination and the coordinates.
     whitelist = []
