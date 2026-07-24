@@ -43,7 +43,7 @@ def generate_scan(pattern, color, board_position):
     if items > 0:
         if color != 0:
             for item in pos_list:
-                if item[0] == 1:
+                if item[0][0] == 1:
                     whitelist.append(item)
                 else:
                     blacklist.append(item)
