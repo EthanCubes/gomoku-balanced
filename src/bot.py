@@ -35,75 +35,37 @@ def analyze():
     """
 
     # Get 5
-    scanned = [sc.generate_scan([0, 1, 1, 1, 1, 0], g.bot_color), sc.generate_scan([0, 1, 1, 1, 1, -1], g.bot_color)]
-    for item in scanned:
-        if item is not None:
-            return item[0][1][0], item[0][1][1]
-    scanned.clear()
+    scanned = sc.generate_scan([0, 1, 1, 1, 1, 0], g.bot_color)
+    if scanned is not None:
+        return scanned[0][1][0], scanned[0][1][1]
     # Block closed 4
-    scanned.append(sc.generate_scan([0, 1, 1, 1, 1, -1], g.player_color))
-    for item in scanned:
-        if item is not None:
-            return item[0][1][0], item[0][1][1]
-    scanned.clear()
+    scanned = sc.generate_scan([0, 1, 1, 1, 1, -1], g.player_color)
+    if scanned is not None:
+        return scanned[0][1][0], scanned[0][1][1]
     # Get closed/open 4
-    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, 0], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, -1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 0], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, -1], g.bot_color))
-    for item in scanned:
-        if item is not None:
-            return item[0][1][0], item[0][1][1]
-    scanned.clear()
+    scanned = sc.generate_scan([0, 1, 1, 1], g.bot_color)
+    if scanned is not None:
+        return scanned[0][1][0], scanned[0][1][1]
     # Block open 3
-    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, 0], g.player_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, -1], g.player_color))
-    for item in scanned:
-        if item is not None:
-            return item[0][1][0], item[0][1][1]
-    scanned.clear()
+    scanned = sc.generate_scan([0, 1, 1, 1, 0], g.player_color)
+    if scanned is not None:
+        return scanned[0][1][0], scanned[0][1][1]
     # Get Open 3
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 0, 0], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 0, 1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 0, -1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 1, 0], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 1, 1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 1, -1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, -1, 0], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, -1, 1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, -1, -1], g.bot_color))
-    for item in scanned:
-        if item is not None:
-            return item[0][1][0], item[0][1][1]
-    scanned.clear()
+    scanned = sc.generate_scan([0, 1, 1], g.bot_color)
+    if scanned is not None:
+        return scanned[0][1][0], scanned[0][1][1]
     # Block closed 3
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 0], g.player_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 1], g.player_color))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, -1], g.player_color))
-    for item in scanned:
-        if item is not None:
-            return item[0][1][0], item[0][1][1]
+    scanned = sc.generate_scan([0, 1, 1, 1, -1], g.player_color)
+    if scanned is not None:
+        return scanned[0][1][0], scanned[0][1][1]
     # Get closed 3
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 0, 0], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 0, 1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 0, -1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 1, 0], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 1, 1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 1, -1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, -1, 0], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, -1, 1], g.bot_color))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, -1, -1], g.bot_color))
-    for item in scanned:
-        if item is not None:
-            return item[0][1][0], item[0][1][1]
-    scanned.clear()
+    scanned = sc.generate_scan([0, 1, 1, -1], g.bot_color)
+    if scanned is not None:
+        return scanned[0][1][0], scanned[0][1][1]
     # Get 2 in a row
-    scanned.append(sc.connect2())
-    for item in scanned:
-        if item is not None:
-            return item[0], item[1]
-    scanned.clear()
+    scanned = sc.connect2()
+    if scanned is not None:
+        return scanned[0], scanned[1]
     # Place randomly
     return place_randomly()
 

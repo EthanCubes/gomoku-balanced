@@ -11,7 +11,7 @@ def scan_board(x, y, pattern): # now this is the hard part.
     # Gets the status and puts it in a list
     for direction in dlist:
         dir_scan_list = [] # directional scan
-        for i in range(6):
+        for i in range(len(pattern)):
             dir_scan_list.append((x+i*int(direction[0]), y+i*int(direction[1])))
         status_list = []
         for item in dir_scan_list:
