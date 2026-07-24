@@ -1,9 +1,9 @@
 import pygame
+import random
+
 import global_data as g
 import offline_multiplayer as m
 import singleplayer as s
-
-import random
 
 from main_menu import main_menu_loop
 

@@ -1,5 +1,7 @@
 import global_data as g
+
 from random import randint
+
 import board as b
 import scan as sc
 

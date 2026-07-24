@@ -1,4 +1,5 @@
 import random
+
 import global_data as g
 
 def scan_board(x, y, pattern): # now this is the hard part.

@@ -1,10 +1,8 @@
-import time
-
 import pygame
+import time
 
 import global_data as g
 import board as b
-from time import sleep
 import singleplayer as s
 
 title = pygame.image.load(g.PROJECT_ROOT / "assets" / "title.bmp")
@@ -28,7 +26,7 @@ def main_menu_loop():
         s.setup()
         g.mode = 2
         b.generate_start_pos()
-        sleep(0.5)
+        time.sleep(0.5)
 
     # "Multiplayer" button
     g.screen.blit(multiplayer, (210, 370))
@@ -38,7 +36,7 @@ def main_menu_loop():
         b.generate_start_pos()
         g.currentPlayer = 1
         g.mode = 1
-        sleep(0.5)
+        time.sleep(0.5)
 
     # Quit game button
     g.screen.blit(quit_button, (210, 470))

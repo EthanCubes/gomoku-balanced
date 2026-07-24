@@ -1,6 +1,7 @@
 import pygame
-import global_data as g
 import random
+
+import global_data as g
 
 def place_stone(x_pos, y_pos, player):
     g.boardPositions[y_pos][x_pos] = player

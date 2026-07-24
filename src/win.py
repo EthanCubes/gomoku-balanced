@@ -1,5 +1,6 @@
 import pygame
-from time import sleep
+import time
+
 import global_data as g
 import board as b
 
@@ -123,7 +124,7 @@ def calculate_win():
             pygame.display.set_caption("Gomuku Swap2: White victory!")
         else:
             pygame.display.set_caption("Gomuku Swap2: Black Victory!")
-        sleep(1)
+        time.sleep(1)
         g.mode = 0
         g.reset_board()
     placed_stones = 0
@@ -135,6 +136,6 @@ def calculate_win():
         b.render()
         pygame.display.flip()
         pygame.display.set_caption("Gomuku Swap2: Draw!")
-        sleep(1)
+        time.sleep(1)
         g.mode = 0
         g.reset_board()

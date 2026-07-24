@@ -1,7 +1,9 @@
+from random import randint
+
 from win import *
+
 import global_data as g
 import board as b
-from random import randint
 import bot
 
 def setup():

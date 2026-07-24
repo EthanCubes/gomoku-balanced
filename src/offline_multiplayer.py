@@ -1,9 +1,9 @@
 from win import *
-import global_data as gD
+import global_data as g
 import board as b
 
 def game_loop():
     b.user_place_stone()
     b.render()
     calculate_win()
-    gD.clock.tick(30)
+    g.clock.tick(30)
