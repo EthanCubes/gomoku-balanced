@@ -53,6 +53,8 @@ def main_menu_loop():
         button_clicked = g.button_clicked((690, 0), (30, 30))
         if button_clicked:
             g.background_music_on = False
+            with open(".gomuku_options.txt", "w") as file:
+                file.write("False")
             pygame.mixer_music.stop()
             time.sleep(0.1)
     else:
@@ -60,4 +62,6 @@ def main_menu_loop():
         button_clicked = g.button_clicked((690, 0), (30, 30))
         if button_clicked:
             g.background_music_on = True
+            with open(".gomuku_options.txt", "w") as file:
+                file.write("True")
             time.sleep(0.1)

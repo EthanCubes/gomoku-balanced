@@ -5,7 +5,6 @@ import singleplayer as s
 
 import random
 
-from global_data import background_music_on
 from main_menu import main_menu_loop
 
 pygame.init()
@@ -17,6 +16,17 @@ g.clock = pygame.time.Clock()
 g.running = True
 
 g.mode = 0
+
+try:
+    with open(".gomuku_options.txt") as file:
+        data = file.read()
+    data = data.split("\n")
+    if data[0] == "True" or data[0] == True:
+        g.background_music_on = True
+    else:
+        g.background_music_on = False
+except FileNotFoundError:
+    print("Settings file not found")
 
 while g.running:
     if g.background_music_on and not pygame.mixer.music.get_busy():

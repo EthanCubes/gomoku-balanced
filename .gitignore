@@ -4,3 +4,4 @@ __pycache__
 .DS_Store
 gomuku-options.txt
 .idea
+.gomuku_options.txt

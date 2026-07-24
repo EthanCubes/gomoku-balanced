@@ -1,5 +1,5 @@
 # Gomuku (Swap2)
-An East Asian board game simular to tic-tac-toe, except it's played on a 15x15 board, and you need to get 5 in a row to win.
+An East Asian board game simular to tic-tac-toe, except it's played on a 15x15 board, and you need to get 5 in a row to win. Unfortunately, it doesn't actually use the swap2 ruleset as that would be too hard to make.
 ![Image of a Go board](screenshots/Screenshot%202026-07-16%20at%2021.20.01.png)
 
 [Play it here]()
@@ -13,6 +13,7 @@ In the terminal:
 Then just like doubleclick the .exe file or run ```wine /path/to/the/exe/gomuku-swap2.exe```
 
 ## Features
+- Randomized starting position for balancing.
 - A main menu with 3 clickable buttons that each do their own thing.
 - A 15x15 Go board 
 that Gomuku is played on.
