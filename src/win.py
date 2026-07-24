@@ -7,6 +7,8 @@ def scan_position(base_pos, pos1, pos2, pos3, pos4, board_position):
     base_pos_status = board_position[base_pos[1]][base_pos[0]]
     if base_pos_status == 0:
         return 0
+    if pos4[0] < 0 or pos4[0] > 14 or pos4[1] < 0 or pos4[1] > 14:
+        return 0
     pos1_status = board_position[pos1[1]][pos1[0]]
     pos2_status = board_position[pos2[1]][pos2[0]]
     pos3_status = board_position[pos3[1]][pos3[0]]
@@ -27,120 +29,88 @@ def generate_scan(board_position):
             pos2 = (x, y + 2)
             pos3 = (x, y + 3)
             pos4 = (x, y + 4)
-            if not (pos4[0] < 0 or pos4[0] > 14 or pos4[1] < 0 or pos4[1] > 14):
-                valid = True
-            else:
-                valid = False
             g.winLine[0] = current_position
             g.winLine[1] = pos4
-            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1 and valid:
+            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1:
                 return current_position, 1
-            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1 and valid:
+            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1:
                 return current_position, -1
             # NE
             pos1 = (x + 1, y + 1)
             pos2 = (x + 2, y + 2)
             pos3 = (x + 3, y + 3)
             pos4 = (x + 4, y + 4)
-            if not (pos4[0] < 0 or pos4[0] > 14 or pos4[1] < 0 or pos4[1] > 14):
-                valid = True
-            else:
-                valid = False
             g.winLine[0] = current_position
             g.winLine[1] = pos4
-            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1 and valid:
+            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1:
                 return current_position,1
-            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1 and valid:
+            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1:
                 return current_position,-1
             # E
             pos1 = (x + 1, y)
             pos2 = (x + 2, y)
             pos3 = (x + 3, y)
             pos4 = (x + 4, y)
-            if not (pos4[0] < 0 or pos4[0] > 14 or pos4[1] < 0 or pos4[1] > 14):
-                valid = True
-            else:
-                valid = False
             g.winLine[0] = current_position
             g.winLine[1] = pos4
-            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1 and valid:
+            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1:
                 return current_position,1
-            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1 and valid:
+            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1:
                 return current_position,-1
             # SE
             pos1 = (x + 1, y - 1)
             pos2 = (x + 2, y - 2)
             pos3 = (x + 3, y - 3)
             pos4 = (x + 4, y - 4)
-            if not (pos4[0] < 0 or pos4[0] > 14 or pos4[1] < 0 or pos4[1] > 14):
-                valid = True
-            else:
-                valid = False
             g.winLine[0] = current_position
             g.winLine[1] = pos4
-            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1 and valid:
+            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1:
                 return current_position,1
-            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1 and valid:
+            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1:
                 return current_position,-1
             # S
             pos1 = (x, y - 1)
             pos2 = (x, y - 2)
             pos3 = (x, y - 3)
             pos4 = (x, y - 4)
-            if not (pos4[0] < 0 or pos4[0] > 14 or pos4[1] < 0 or pos4[1] > 14):
-                valid = True
-            else:
-                valid = False
             g.winLine[0] = current_position
             g.winLine[1] = pos4
-            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1 and valid:
+            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1:
                 return current_position,1
-            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1 and valid:
+            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1:
                 return current_position,-1
             # Sw
             pos1 = (x - 1, y - 1)
             pos2 = (x - 2, y - 2)
             pos3 = (x - 3, y - 3)
             pos4 = (x - 4, y - 4)
-            if not (pos4[0] < 0 or pos4[0] > 14 or pos4[1] < 0 or pos4[1] > 14):
-                valid = True
-            else:
-                valid = False
             g.winLine[0] = current_position
             g.winLine[1] = pos4
-            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1 and valid:
+            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1:
                 return current_position,1
-            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1 and valid:
+            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1:
                 return current_position,-1
             # W
             pos1 = (x - 1, y)
             pos2 = (x - 2, y)
             pos3 = (x - 3, y)
             pos4 = (x - 4, y)
-            if not (pos4[0] < 0 or pos4[0] > 14 or pos4[1] < 0 or pos4[1] > 14):
-                valid = True
-            else:
-                valid = False
             g.winLine[0] = current_position
             g.winLine[1] = pos4
-            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1 and valid:
+            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1:
                 return current_position,1
-            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1 and valid:
+            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1:
                 return current_position,-1
             # NW
             pos1 = (x - 1, y + 1)
             pos2 = (x - 2, y + 2)
             pos3 = (x - 3, y + 3)
             pos4 = (x - 4, y + 4)
-            if not (pos4[0] < 0 or pos4[0] > 14 or pos4[1] < 0 or pos4[1] > 14):
-                valid = True
-            else:
-                valid = False
             g.winLine[0] = current_position
             g.winLine[1] = pos4
-            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1 and valid:
+            if scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == 1:
                 return current_position,1
-            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1 and valid:
+            elif scan_position(current_position, pos1, pos2, pos3, pos4, board_position) == -1:
                 return current_position,-1
     return None,0
 
