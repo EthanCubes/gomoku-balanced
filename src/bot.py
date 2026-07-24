@@ -16,16 +16,18 @@ def place_randomly():
             valid = True
     return pos1, pos2
 
-def simulate_position(pattern):
+def simulate_position(pattern, color):
     sim_pos = g.boardPositions
     for y in range(15):
         for x in range(15):
             if sim_pos[y][x] == 0:
                 sim_pos[y][x] = g.bot_color
-                scanned = sc.generate_scan(pattern, g.bot_color, sim_pos)
+                scanned = sc.generate_scan(pattern, color, sim_pos)
+                print(scanned)
                 if scanned is not None:
                     if scanned[0][1][0] == x and scanned[0][1][1] == y:
                         return scanned[0][1][0], scanned[0][1][1]
+                sim_pos[y][x] = 0
     return None
 
 def analyze():
@@ -50,34 +52,42 @@ def analyze():
     scanned = sc.generate_scan([0, 1, 1, 1, 1], g.bot_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
+
     # Block closed 4
     scanned = sc.generate_scan([0, 1, 1, 1, 1], g.player_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
+
     # Get closed/open 4
     scanned = sc.generate_scan([0, 1, 1, 1], g.bot_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
+
     # Block open 3
     scanned = sc.generate_scan([0, 1, 1, 1, 0], g.player_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
+
     # Get Open 3
     scanned = sc.generate_scan([0, 1, 1], g.bot_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
+
     # Block closed 3
     scanned = sc.generate_scan([0, 1, 1, 1, -1], g.player_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
+
     # Get closed 3
     scanned = sc.generate_scan([0, 1, 1, -1], g.bot_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
+
     # Get 2 in a row
     scanned = sc.connect2()
     if scanned is not None:
         return scanned[0], scanned[1]
+
     # Place randomly
     return place_randomly()
 
