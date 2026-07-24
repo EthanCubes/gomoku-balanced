@@ -82,3 +82,10 @@ def reset_board():
     global boardPositions, defaultBoardPositions
     pygame.mixer.music.stop()
     boardPositions = [row[:] for row in defaultBoardPositions]
+
+def get_directional_positions(position, direction):
+    pos_list = []
+    x, y = position
+    for i in range(5):
+        pos_list.append((x+i*DIRECTION_LIST[direction][0], y+i*DIRECTION_LIST[direction][1]))
+    return pos_list
