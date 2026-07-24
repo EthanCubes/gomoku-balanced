@@ -19,13 +19,13 @@ clock = None
 running = None
 
 starter = None
-botColor = None
-playerColor = None
-currentPlayer = None
+bot_color = None
+player_color = None
+current_player = None
 
 background_music_on = True
 
-winLine = [None, None]
+win_line = [None, None]
 
 defaultBoardPositions = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],

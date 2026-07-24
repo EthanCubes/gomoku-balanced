@@ -60,7 +60,7 @@ def connect2():
         dlist = [(0,1),(0,-1),(1,0),(0,1),(1,1),(1,-1),(-1,1),(-1,-1)]
         x = random.randint(0,14)
         y = random.randint(0,14)
-        if g.boardPositions[y][x] == g.botColor:
+        if g.boardPositions[y][x] == g.bot_color:
             y += dlist[direction][1]
             x += dlist[direction][0]
             if x < 0 or x > 14 or y < 0 or y > 14:

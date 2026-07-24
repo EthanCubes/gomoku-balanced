@@ -5,7 +5,7 @@ import global_data as g
 
 def place_stone(x_pos, y_pos, player):
     g.boardPositions[y_pos][x_pos] = player
-    g.currentPlayer *= -1
+    g.current_player *= -1
 
 def user_place_stone():
     if pygame.mouse.get_pressed(3)[0]:
@@ -17,11 +17,11 @@ def user_place_stone():
         if grid_y > 14:
             grid_y = 14
         if g.boardPositions[grid_y][grid_x] == 0:
-            place_stone(grid_x, grid_y, g.currentPlayer)
+            place_stone(grid_x, grid_y, g.current_player)
 
 def render():
     g.screen.fill("peru")
-    if g.currentPlayer == -1:
+    if g.current_player == -1:
         pygame.draw.circle(g.screen, (0, 0, 0), (697, 23), 5)
     else:
         pygame.draw.circle(g.screen, (255, 255, 255), (697, 23), 5)

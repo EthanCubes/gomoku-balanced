@@ -22,7 +22,7 @@ def main_menu_loop():
     button_clicked = g.button_clicked((210, 270), (300, 100))
     if button_clicked:
         pygame.mixer.music.stop()
-        g.currentPlayer = 1
+        g.current_player = 1
         s.setup()
         g.mode = 2
         b.generate_start_pos()
@@ -34,7 +34,7 @@ def main_menu_loop():
     if button_clicked:
         pygame.mixer.music.stop()
         b.generate_start_pos()
-        g.currentPlayer = 1
+        g.current_player = 1
         g.mode = 1
         time.sleep(0.5)
 

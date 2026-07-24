@@ -9,14 +9,14 @@ import bot
 def setup():
     g.starter = randint(0, 1) # 0 is bot, 1 is human
     if g.starter == 0:
-        g.botColor = 1
-        g.playerColor = -1
+        g.bot_color = 1
+        g.player_color = -1
     else:
-        g.botColor = -1
-        g.playerColor = 1
+        g.bot_color = -1
+        g.player_color = 1
 
 def game_loop():
-    if g.currentPlayer == 1:
+    if g.current_player == 1:
         if g.starter == 0:
             bot.bot_place_stone()
         else:
