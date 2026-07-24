@@ -16,10 +16,17 @@ def place_randomly():
             valid = True
     return pos1, pos2
 
-def simulate_position():
+def simulate_position(pattern):
+    sim_pos = g.boardPositions
     for y in range(15):
         for x in range(15):
-            pass
+            if sim_pos[y][x] == 0:
+                sim_pos[y][x] = g.bot_color
+                scanned = sc.generate_scan(pattern, g.bot_color, sim_pos)
+                if scanned is not None:
+                    if scanned[0][1][0] == x and scanned[0][1][1] == y:
+                        return scanned[0][1][0], scanned[0][1][1]
+    return None
 
 def analyze():
     """
@@ -40,7 +47,7 @@ def analyze():
     """
 
     # Get 5
-    scanned = sc.generate_scan([0, 1, 1, 1, 1, 0], g.bot_color, g.boardPositions)
+    scanned = sc.generate_scan([0, 1, 1, 1, 1], g.bot_color, g.boardPositions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
     # Block closed 4
