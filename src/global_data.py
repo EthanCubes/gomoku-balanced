@@ -27,6 +27,8 @@ background_music_on = True
 
 win_line = [None, None]
 
+DIRECTION_LIST = [(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1),(-1,0),(-1,1)]
+
 defaultBoardPositions = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
