@@ -1,5 +1,6 @@
 import global_data as g
 
+from copy import deepcopy
 from random import randint
 
 import board as b
@@ -15,20 +16,6 @@ def place_randomly():
         if g.boardPositions[pos2][pos1] == 0:
             valid = True
     return pos1, pos2
-
-def simulate_position(pattern, color):
-    sim_pos = g.boardPositions
-    for y in range(15):
-        for x in range(15):
-            if sim_pos[y][x] == 0:
-                sim_pos[y][x] = g.bot_color
-                scanned = sc.generate_scan(pattern, color, sim_pos)
-                print(scanned)
-                if scanned is not None:
-                    if scanned[0][1][0] == x and scanned[0][1][1] == y:
-                        return scanned[0][1][0], scanned[0][1][1]
-                sim_pos[y][x] = 0
-    return None
 
 def analyze():
     """
