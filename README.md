@@ -43,3 +43,9 @@ To find places to attack or defend, a function scans in all 8 directions for all
 - Music credit to Kevin MacCleod
 - [DeepSeek](https://deepseek.com) AI was used for debugging and for some emotional support when I didn't know what to do or came close to crashing out.
 - [CommonLuke's Video on making a chess engine]() was a major inspiration in me starting this project. The video is also really entertaining, I've watched it like 3 times now.
+
+## Bug Tracker
+- Bot sometimes misses tactics
+- Bot cannot register broken 3s and 4s
+- Bot cannot register tactics within 5 spots of, and perpendicular to the border
+- Music toggle does not stay toggled.
