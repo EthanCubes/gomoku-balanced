@@ -1,6 +1,5 @@
 import global_data as g
 
-from copy import deepcopy
 from random import randint
 
 import board as b
@@ -38,7 +37,7 @@ def analyze():
     # Get 5
     scanned = sc.generate_scan([0, 1, 1, 1, 1], g.bot_color, g.boardPositions)
     if scanned is not None:
-        return scanned[0][1][0], scanned[0][1][1]
+        return scanned[0][1][0], scanned[0][1][1] # 1 is list of elements, 2 selects coordinates, 3 is x/y
 
     # Block closed 4
     scanned = sc.generate_scan([0, 1, 1, 1, 1], g.player_color, g.boardPositions)
