@@ -50,6 +50,6 @@ It's really not that strong and even someone with intermediate skill can beat it
 - [Pytutorial](https://pytutorial.com/python-pygame-draw-line-guide/) helped with drawing lines.
 - [GeeksForGeeks](https://www.geeksforgeeks.org/python/pygame-drawing-objects-and-shapes/) also helped with drawing lines.
 - [w3Schools](https://w3schools.com) is always a great help no matter what I am making.  
-- Music credit to Kevin MacLeod
+- "Elevator Music", "Amazing Plan", "Scheming Weasel Faster" are all by Kevin MacLeod (https://incompetech.com), licensed under CC by http://creativecommons.org/licenses/by/4.0/
 - [DeepSeek](https://deepseek.com) AI was used for debugging and for some emotional support when I didn't know what to do or came close to crashing out.
 - [CommonLuke's Video on making a chess engine](https://www.youtube.com/watch?v=UqCXwP1F-ho) was a major inspiration in me starting this project. The video is also really entertaining, I've watched it like 3 times now.
