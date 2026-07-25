@@ -17,6 +17,20 @@ def main_menu_loop():
 
     g.screen.blit(title, (210, 90))
 
+    # Draw decoration
+    pygame.draw.line(g.screen, (0, 0, 0), (0, 660), (60, 720), 5)
+    pygame.draw.line(g.screen, (0, 0, 0), (0, 600), (120, 720), 5)
+    pygame.draw.line(g.screen, (0, 0, 0), (0, 540), (180, 720), 5)
+    pygame.draw.line(g.screen, (0, 0, 0), (0, 480), (240, 720), 5)
+
+    pygame.draw.line(g.screen, (0, 0, 0), (0, 540), (30, 510), 5)
+    pygame.draw.line(g.screen, (0, 0, 0), (0, 600), (60, 540), 5)
+    pygame.draw.line(g.screen, (0, 0, 0), (0, 660), (90, 570), 5)
+    pygame.draw.line(g.screen, (0, 0, 0), (0, 720), (120, 600), 5)
+    pygame.draw.line(g.screen, (0, 0, 0), (60, 720), (150, 630), 5)
+    pygame.draw.line(g.screen, (0, 0, 0), (120, 720), (180, 660), 5)
+    pygame.draw.line(g.screen, (0, 0, 0), (180, 720), (210, 690), 5)
+
     # "Singleplayer" button
     g.screen.blit(singleplayer, (210, 270))
     button_clicked = g.button_clicked((210, 270), (300, 100))
