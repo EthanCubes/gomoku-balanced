@@ -1,25 +1,32 @@
 import pygame
 import platform
 import os
+import sys
 
 from pathlib import Path
 
 if platform.system() == "Windows":
     print("imagine using windows")
-    config_dir = Path(os.environ.get("APPDATA", os.path.expanduser("~"))) / "gomuku_swap2"
+    config_dir = Path(os.environ.get("APPDATA", os.path.expanduser("~"))) / "gomoku_swap2"
 elif platform.system() == "Darwin":
     print("wise choice")
-    config_dir = Path(os.path.expanduser("~/Library/Application Support")) / "gomuku_swap2"
+    config_dir = Path(os.path.expanduser("~/Library/Application Support")) / "gomoku_swap2"
 elif platform.system() == "Linux":
     print("i use arch btw")
-    config_dir = Path(os.path.expanduser("~/.config")) / "gomuku_swap2"
+    config_dir = Path(os.path.expanduser("~/.config")) / "gomoku_swap2"
 else:
     print(f"unknown os: {platform.system()}, using fallback directory")
-    config_dir = Path(os.path.expanduser("~")) / "gomuku_swap2"
+    config_dir = Path(os.path.expanduser("~")) / "gomoku_swap2"
 CONFIG_FILE = config_dir / "gomoku_options.txt"
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent
+def get_base_path():
+    if getattr(sys, 'frozen', False):
+        return Path(sys._MEIPASS)
+    else:
+        # When running normally, go up one level from src to project root
+        return Path(__file__).resolve().parent.parent
+
+PROJECT_ROOT = get_base_path()
 
 '''
 0: Main menu
