@@ -31,6 +31,13 @@ def main_menu_loop():
     pygame.draw.line(g.screen, (0, 0, 0), (120, 720), (180, 660), 5)
     pygame.draw.line(g.screen, (0, 0, 0), (180, 720), (210, 690), 5)
 
+    pygame.draw.circle(g.screen, (0, 0, 0), (180, 660), 17)
+    pygame.draw.circle(g.screen, (255, 255, 255), (120, 600), 17)
+    pygame.draw.circle(g.screen, (0, 0, 0), (210, 690), 17)
+    pygame.draw.circle(g.screen, (255, 255, 255), (150, 690), 17)
+    pygame.draw.circle(g.screen, (255, 255, 255), (90, 690), 17)
+    pygame.draw.circle(g.screen, (0, 0, 0), (30, 630), 17)
+
     # "Singleplayer" button
     g.screen.blit(singleplayer, (210, 270))
     button_clicked = g.button_clicked((210, 270), (300, 100))
