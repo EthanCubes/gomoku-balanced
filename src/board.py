@@ -4,7 +4,7 @@ import random
 import global_data as g
 
 def place_stone(x_pos, y_pos, player):
-    g.boardPositions[y_pos][x_pos] = player
+    g.board_positions[y_pos][x_pos] = player
     g.current_player *= -1
 
 def user_place_stone():
@@ -16,7 +16,7 @@ def user_place_stone():
             grid_x = 14
         if grid_y > 14:
             grid_y = 14
-        if g.boardPositions[grid_y][grid_x] == 0:
+        if g.board_positions[grid_y][grid_x] == 0:
             place_stone(grid_x, grid_y, g.current_player)
 
 def render():
@@ -37,11 +37,11 @@ def render():
         y_pos = 45 + 45*y
         for x in range(15):
             x_pos = 45 + 45*x
-            if g.boardPositions[y][x] == 1:
+            if g.board_positions[y][x] == 1:
                 color = (255, 255, 255)
             else:
                 color = (0, 0, 0)
-            if g.boardPositions[y][x] != 0:
+            if g.board_positions[y][x] != 0:
                 pygame.draw.circle(g.screen, color, (x_pos, y_pos), 20)
 
 def generate_start_pos():
@@ -61,6 +61,6 @@ def generate_start_pos():
         if stone3 != stone1 and stone3 != stone2:
             position_valid = True
 
-    g.boardPositions[stone1[1]][stone1[0]] = -1
-    g.boardPositions[stone2[1]][stone2[0]] = 1
-    g.boardPositions[stone3[1]][stone3[0]] = -1
+    g.board_positions[stone1[1]][stone1[0]] = -1
+    g.board_positions[stone2[1]][stone2[0]] = 1
+    g.board_positions[stone3[1]][stone3[0]] = -1

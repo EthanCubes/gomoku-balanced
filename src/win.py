@@ -116,11 +116,11 @@ def generate_scan(board_position):
     return None,0
 
 def calculate_win():
-    if generate_scan(g.boardPositions)[1] != 0:
+    if generate_scan(g.board_positions)[1] != 0:
         b.render()
         pygame.draw.line(g.screen, (255, 0, 0), (g.win_line[0][0] * 45 + 45, g.win_line[0][1] * 45 + 45), (g.win_line[1][0] * 45 + 45, g.win_line[1][1] * 45 + 45), 5)
         pygame.display.flip()
-        if generate_scan(g.boardPositions)[1] == 1:
+        if generate_scan(g.board_positions)[1] == 1:
             pygame.display.set_caption("Gomuku Swap2: White victory!")
         else:
             pygame.display.set_caption("Gomuku Swap2: Black Victory!")
@@ -130,7 +130,7 @@ def calculate_win():
     placed_stones = 0
     for y in range(15):
         for x in range(15):
-            if g.boardPositions[y][x] != 0:
+            if g.board_positions[y][x] != 0:
                 placed_stones += 1
     if placed_stones == 225:
         b.render()

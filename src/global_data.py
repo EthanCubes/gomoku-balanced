@@ -29,7 +29,7 @@ win_line = [None, None]
 
 DIRECTION_LIST = [(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1),(-1,0),(-1,1)]
 
-defaultBoardPositions = [
+default_board_positions = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -47,7 +47,7 @@ defaultBoardPositions = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 ]
 
-boardPositions = [
+board_positions = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -79,9 +79,9 @@ def button_clicked(start, relative_end):
 
 
 def reset_board():
-    global boardPositions, defaultBoardPositions
+    global board_positions, default_board_positions
     pygame.mixer.music.stop()
-    boardPositions = [row[:] for row in defaultBoardPositions]
+    board_positions = [row[:] for row in default_board_positions]
 
 def get_directional_positions(position, direction):
     pos_list = []
