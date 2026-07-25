@@ -1,5 +1,6 @@
 import pygame
 import time
+import os
 
 import global_data as g
 import board as b
@@ -67,12 +68,14 @@ def main_menu_loop():
         g.running = False
 
     # Music toggle
+    path = g.config_dir
+    os.makedirs(path, exist_ok=True)
     if g.background_music_on:
         g.screen.blit(music_on, (690, 0))
         button_clicked = g.button_clicked((690, 0), (30, 30))
         if button_clicked:
             g.background_music_on = False
-            with open(".gomuku_options.txt", "w") as file:
+            with open(g.CONFIG_FILE, "w") as file:
                 file.write("False")
             pygame.mixer_music.stop()
             time.sleep(0.25)
@@ -81,6 +84,6 @@ def main_menu_loop():
         button_clicked = g.button_clicked((690, 0), (30, 30))
         if button_clicked:
             g.background_music_on = True
-            with open(".gomuku_options.txt", "w") as file:
+            with open(g.CONFIG_FILE, "w") as file:
                 file.write("True")
             time.sleep(0.25)

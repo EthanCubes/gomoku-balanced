@@ -18,7 +18,7 @@ g.running = True
 g.mode = 0
 
 try:
-    with open(".gomuku_options.txt") as file:
+    with open(g.CONFIG_FILE) as file:
         data = file.read()
     data = data.split("\n")
     if data[0] == "True" or data[0] == True:

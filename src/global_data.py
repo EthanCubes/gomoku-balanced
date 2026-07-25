@@ -1,6 +1,22 @@
 import pygame
+import platform
+import os
 
 from pathlib import Path
+
+if platform.system() == "Windows":
+    print("imagine using windows")
+    config_dir = Path(os.environ.get("APPDATA", os.path.expanduser("~"))) / "gomuku_swap2"
+elif platform.system() == "Darwin":
+    print("wise choice")
+    config_dir = Path(os.path.expanduser("~/Library/Application Support")) / "gomuku_swap2"
+elif platform.system() == "Linux":
+    print("i use arch btw")
+    config_dir = Path(os.path.expanduser("~/.config")) / "gomuku_swap2"
+else:
+    print(f"unknown os: {platform.system()}, using fallback directory")
+    config_dir = Path(os.path.expanduser("~")) / "gomuku_swap2"
+CONFIG_FILE = config_dir / "gomoku_options.txt"
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
