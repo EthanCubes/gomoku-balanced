@@ -40,21 +40,41 @@ def analyze():
         return scanned[0][1][0], scanned[0][1][1] # 1 is list of elements, 2 selects coordinates, 3 is x/y
     # Broken 5
     scanned = sc.generate_scan([1,1,0,1,1], g.bot_color, g.board_positions)
+    if scanned is not None:
+        return g.get_directional_positions((scanned[0][1][0], scanned[0][1][1]), scanned[0][0][1])[2]
+    scanned = sc.generate_scan([1, 0, 1, 1, 1], g.bot_color, g.board_positions)
+    if scanned is not None:
+        return g.get_directional_positions((scanned[0][1][0], scanned[0][1][1]), scanned[0][0][1])[1]
 
     # Block closed 4
     scanned = sc.generate_scan([0, 1, 1, 1, 1], g.player_color, g.board_positions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
+    # Block Broken 4
+    scanned = sc.generate_scan([1, 1, 0, 1, 1], g.player_color, g.board_positions)
+    if scanned is not None:
+        return g.get_directional_positions((scanned[0][1][0], scanned[0][1][1]), scanned[0][0][1])[2]
+    scanned = sc.generate_scan([1, 0, 1, 1, 1], g.bot_color, g.board_positions)
+    if scanned is not None:
+        return g.get_directional_positions((scanned[0][1][0], scanned[0][1][1]), scanned[0][0][1])[1]
 
     # Get closed/open 4
     scanned = sc.generate_scan([0, 1, 1, 1], g.bot_color, g.board_positions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
+    # Get 4 by broken 3
+    scanned = sc.generate_scan([1, 1, 0, 1], g.bot_color, g.board_positions)
+    if scanned is not None:
+        return g.get_directional_positions((scanned[0][1][0], scanned[0][1][1]), scanned[0][0][1])[2]
 
     # Block open 3
     scanned = sc.generate_scan([0, 1, 1, 1, 0], g.player_color, g.board_positions)
     if scanned is not None:
         return scanned[0][1][0], scanned[0][1][1]
+    # Block broken 3
+    scanned = sc.generate_scan([1, 1, 0, 1], g.player_color, g.board_positions)
+    if scanned is not None:
+        return g.get_directional_positions((scanned[0][1][0], scanned[0][1][1]), scanned[0][0][1])[2]
 
     # Get Open 3
     scanned = sc.generate_scan([0, 1, 1], g.bot_color, g.board_positions)
