@@ -36,6 +36,17 @@ There are two reasons why the bot may make a move. 1 is that the bot needs to de
 
 To find places to attack or defend, a function scans in all 8 directions for all 225 possible spots (1800 iterations in total) and compares the iterations against a specified pattern, for example [0,1,1,1,0] is an open 3 and [0,1,1,1,1,0] is impending doom (open four). If it finds a position, it will add it to a list of positions, which is returned to the "analyze" function to be analyzed. The "analyze" function eventually returns a set of coordinates that the bot will place a stone at, in around the same way that a user might place a stone.
 
+# Help/FAQ
+### Why is the board starting in such a weird position?
+That's the "swap2" element, even though it is not actually the swap2 ruleset. This is done for balancing, as normally black plays first and has a close to 100% chance of winning. 
+TL;DR: Balancing
+
+### What is "Offline multiplayer"?
+Offline multiplayer is when you play against someone (or yourself) in real life.
+
+### Why is the bot so strong?
+It's really not that strong and even someone with intermediate skill can beat it quite consistently. It gets easier with practice.
+
 ## Credits
 - [Pygame official documentation](https://www.pygame.org/docs/) was helpful in getting the project started.
 - [Pytutorial](https://pytutorial.com/python-pygame-draw-line-guide/) helped with drawing lines.
@@ -44,9 +55,3 @@ To find places to attack or defend, a function scans in all 8 directions for all
 - Music credit to Kevin MacCleod
 - [DeepSeek](https://deepseek.com) AI was used for debugging and for some emotional support when I didn't know what to do or came close to crashing out.
 - [CommonLuke's Video on making a chess engine]() was a major inspiration in me starting this project. The video is also really entertaining, I've watched it like 3 times now.
-
-## Bug Tracker
-- Bot sometimes misses tactics
-- Bot cannot register broken 3s and 4s
-- Bot cannot register tactics within 5 spots of, and perpendicular to the border
-- Music toggle does not stay toggled.
