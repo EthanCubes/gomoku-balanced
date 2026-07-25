@@ -1,7 +1,11 @@
-.venv
-.vscode
+.venv/
+.vscode/
 __pycache__
 .DS_Store
 gomuku-options.txt
-.idea
+.idea/
 .gomuku_options.txt
+build/
+dist/
+*.pyc
+*.spec
