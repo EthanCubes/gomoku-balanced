@@ -9,8 +9,8 @@ from main_menu import main_menu_loop
 
 pygame.init()
 g.screen = pygame.display.set_mode((720, 720))
-pygame.display.set_caption("Gomuku Swap2")
-g.img = pygame.image.load(g.PROJECT_ROOT / "assets" / "gomuku-swap2icon.bmp")
+pygame.display.set_caption("Gomoku Swap2")
+g.img = pygame.image.load(g.PROJECT_ROOT / "assets" / "gomoku_balanced.bmp")
 pygame.display.set_icon(g.img)
 g.clock = pygame.time.Clock()
 g.running = True
@@ -48,16 +48,16 @@ while g.running:
                 g.mode = 0
                 g.reset_board()
     if g.mode == 0:
-        pygame.display.set_caption("Gomuku Swap2")
+        pygame.display.set_caption("Gomoku Swap2")
         main_menu_loop()
     elif g.mode == 1: # Multiplayer
-        pygame.display.set_caption("Gomuku Swap2: Local Multiplayer game")
+        pygame.display.set_caption("Gomoku Swap2: Local Multiplayer game")
         m.game_loop()
     elif g.mode == 2: # Singleplayer
         if g.starter == 0:
-            pygame.display.set_caption("Gomuku Swap2: Game vs Bot (You are black)")
+            pygame.display.set_caption("Gomoku Swap2: Game vs Bot (You are black)")
         else:
-            pygame.display.set_caption("Gomuku Swap2: Game vs Bot (You are white)")
+            pygame.display.set_caption("Gomoku Swap2: Game vs Bot (You are white)")
         s.game_loop()
 
     pygame.display.flip()
