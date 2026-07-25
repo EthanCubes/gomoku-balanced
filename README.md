@@ -15,11 +15,10 @@ Then just like doubleclick the .exe file or run ```wine /path/to/the/exe/gomuku-
 ## Features
 - Randomized starting position for balancing.
 - A main menu with 3 clickable buttons that each do their own thing.
-- A 15x15 Go board 
-that Gomuku is played on.
+- A 15x15 Go board that Gomuku is played on.
 - A local multiplayer mode that allows for you to play against your (IRL) friends (or yourself if you have no friends)
 - A bot that is somewhat intelligent and actively responds to your threats and creates its own threats.
-- Background music that is somewhat annoying.
+- Background music that is somewhat annoying. Can be turned off though, and it stays that way.
 
 ## How to run code locally
 Requires Python 3.12.13 and Pygame 2.6.1 (Note that the project will still technically work inside the newer Python versions, but on 3.14.6 specifically the music is broken). You will probably have to install them inside a venv since this program uses an older version of Python as aforementioned.
