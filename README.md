@@ -1,5 +1,5 @@
-# Gomuku (Swap2)
-An East Asian board game simular to tic-tac-toe, except it's played on a 15x15 board, and you need to get 5 in a row to win. Unfortunately, it doesn't actually use the swap2 ruleset as that would be too hard to make.
+# Gomoku (Balanced)
+An East Asian board game simular to tic-tac-toe, except it's played on a 15x15 board, and you need to get 5 in a row to win.
 ![Image of a Go board](screenshots/Screenshot%202026-07-16%20at%2021.20.01.png)
 
 [Play it here]()
@@ -15,7 +15,7 @@ Then just like doubleclick the .exe file or run ```wine /path/to/the/exe/gomuku-
 ## Features
 - Randomized starting position for balancing.
 - A main menu with 3 clickable buttons that each do their own thing.
-- A 15x15 Go board that Gomuku is played on.
+- A 15x15 Go board that Gomoku is played on.
 - A local multiplayer mode that allows for you to play against your (IRL) friends (or yourself if you have no friends)
 - A bot that is somewhat intelligent and actively responds to your threats and creates its own threats.
 - Background music that is somewhat annoying. Can be turned off though, and it stays that way.
@@ -37,8 +37,7 @@ To find places to attack or defend, a function scans in all 8 directions for all
 
 # Help/FAQ
 ### Why is the board starting in such a weird position?
-That's the "swap2" element, even though it is not actually the swap2 ruleset. This is done for balancing, as normally black plays first and has a close to 100% chance of winning. 
-TL;DR: Balancing
+This is done for balancing, as normally black plays first and has a close to 100% chance of winning.
 
 ### What is "Offline multiplayer"?
 Offline multiplayer is when you play against someone (or yourself) in real life.
@@ -51,6 +50,6 @@ It's really not that strong and even someone with intermediate skill can beat it
 - [Pytutorial](https://pytutorial.com/python-pygame-draw-line-guide/) helped with drawing lines.
 - [GeeksForGeeks](https://www.geeksforgeeks.org/python/pygame-drawing-objects-and-shapes/) also helped with drawing lines.
 - [w3Schools](https://w3schools.com) is always a great help no matter what I am making.  
-- Music credit to Kevin MacCleod
+- Music credit to Kevin MacLeod
 - [DeepSeek](https://deepseek.com) AI was used for debugging and for some emotional support when I didn't know what to do or came close to crashing out.
-- [CommonLuke's Video on making a chess engine]() was a major inspiration in me starting this project. The video is also really entertaining, I've watched it like 3 times now.
+- [CommonLuke's Video on making a chess engine](https://www.youtube.com/watch?v=UqCXwP1F-ho) was a major inspiration in me starting this project. The video is also really entertaining, I've watched it like 3 times now.
