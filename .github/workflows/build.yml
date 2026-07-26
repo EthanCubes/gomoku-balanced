@@ -5,9 +5,9 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-  workflow_dispatch:  # Allows you to manually run the workflow from the Actions tab
+  workflow_dispatch:
   release:
-    types: [published]  # Triggers the workflow when you publish a new release
+    types: [published]
 
 jobs:
   build:
@@ -34,7 +34,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.12.13'  # Set the exact version you use
+        python-version: '3.12.13'
 
     - name: Install dependencies
       run: |
@@ -44,9 +44,11 @@ jobs:
     - name: Build with PyInstaller
       run: |
         pip install pyinstaller
-        # This command builds the executable. It assumes your main.py is in the root.
-        # You may need to adjust the --add-data paths.
-        pyinstaller --onefile --windowed --name "${{ matrix.artifact_name }}" src/main.py --add-data "assets:assets"
+        if [ "${{ runner.os }}" == "Windows" ]; then
+          pyinstaller --onefile --windowed --name "${{ matrix.artifact_name }}" src/main.py --add-data "assets;assets"
+        else
+          pyinstaller --onefile --windowed --name "${{ matrix.artifact_name }}" src/main.py --add-data "assets:assets"
+        fi
       shell: bash
 
     - name: Upload artifact (for debugging)
