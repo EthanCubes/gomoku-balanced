@@ -1,11 +1,20 @@
 # Gomoku (Balanced)
 An East Asian board game simular to tic-tac-toe, except it's played on a 15x15 board, and you need to get 5 in a row to win.
 ![Image of a Go board](screenshots/Screenshot%202026-07-16%20at%2021.20.01.png)
+![Main menu of the game](screenshots/Screenshot_20260725.png)
 
 [Get the game here](https://ethancubes.itch.io/gomoku-balanced)
 ## Quickstart
 Download the game files from Itch.io according to your operating system, and run them.
 This game was built (primarily) on Linux and the build files were originally for Linux and were converted to .exe and .app files by GitHub Actions.
+### MacOS users
+1. You'll need to have admin permissions to run this program.
+2. Double-click the executable file, and a pop-up will pop up that says that Apple could not confirm the app isn't malware (it isn't, you can check the files). Don't delete the file yet, since it'd be slightly inconvenient.
+3. To bypass this, you have to go to Settings/Privacy and Security.
+4. Scroll down until you get to the thing that says that the application was blocked from running. Click allow anyway.
+5. A popup will ask for conformation that you want to launch the app. Make sure to select the right option.
+6. A popup will ask for admin permissions. Enter admin password or use admin touch id.
+7. The app should launch in the terminal, and the pygame window should open.
 
 ## Features
 - Randomized starting position for balancing.
