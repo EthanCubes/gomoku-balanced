@@ -2,15 +2,10 @@
 An East Asian board game simular to tic-tac-toe, except it's played on a 15x15 board, and you need to get 5 in a row to win.
 ![Image of a Go board](screenshots/Screenshot%202026-07-16%20at%2021.20.01.png)
 
-[Play it here]()
+[Get the game here](https://ethancubes.itch.io/gomoku-balanced)
 ## Quickstart
 Download the game files from Itch.io according to your operating system, and run them.
-
-If you're on Linux, I'm so sorry I can't give you a dedicated version for you, but just run the Windows version with Wine. I'd assume you know how to use Wine already, but here's how to download wine just in case:
-In the terminal:
-- Arch-based systems: ```sudo pacman -S wine```
-- Everything else, probably: ```sudo apt install wine```
-Then just like doubleclick the .exe file or run ```wine /path/to/the/exe/gomuku-swap2.exe```
+This game was built (primarily) on Linux and the build files were originally for Linux and were converted to .exe and .app files by GitHub Actions.
 
 ## Features
 - Randomized starting position for balancing.
