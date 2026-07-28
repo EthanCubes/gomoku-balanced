@@ -1,7 +1,7 @@
 # Gomoku (Balanced)
 An East Asian board game simular to tic-tac-toe, except it's played on a 15x15 board, and you need to get 5 in a row to win.
 ![Image of a Go board](screenshots/Screenshot%202026-07-16%20at%2021.20.01.png)
-![Main menu of the game](screenshots/Screenshot_20260725.png)
+![Main menu of the game](screenshots/Screenshot_20260725_210632.png)
 
 [Get the game here](https://ethancubes.itch.io/gomoku-balanced)
 ## Quickstart
