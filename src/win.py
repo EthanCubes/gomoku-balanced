@@ -121,9 +121,9 @@ def calculate_win():
         pygame.draw.line(g.screen, (255, 0, 0), (g.win_line[0][0] * 45 + 45, g.win_line[0][1] * 45 + 45), (g.win_line[1][0] * 45 + 45, g.win_line[1][1] * 45 + 45), 5)
         pygame.display.flip()
         if generate_scan(g.board_positions)[1] == 1:
-            pygame.display.set_caption("Gomuku Swap2: White victory!")
+            pygame.display.set_caption("Gomuku Balanced: White victory!")
         else:
-            pygame.display.set_caption("Gomuku Swap2: Black Victory!")
+            pygame.display.set_caption("Gomuku Balanced: Black Victory!")
         time.sleep(1)
         g.mode = 0
         g.reset_board()

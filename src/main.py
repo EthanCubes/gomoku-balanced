@@ -48,16 +48,16 @@ while g.running:
                 g.mode = 0
                 g.reset_board()
     if g.mode == 0:
-        pygame.display.set_caption("Gomoku Swap2")
+        pygame.display.set_caption("Gomoku Balanced")
         main_menu_loop()
     elif g.mode == 1: # Multiplayer
-        pygame.display.set_caption("Gomoku Swap2: Local Multiplayer game")
+        pygame.display.set_caption("Gomoku Balanced: Local Multiplayer game")
         m.game_loop()
     elif g.mode == 2: # Singleplayer
         if g.starter == 0:
-            pygame.display.set_caption("Gomoku Swap2: Game vs Bot (You are black)")
+            pygame.display.set_caption("Gomoku Balanced: Game vs Bot (You are black)")
         else:
-            pygame.display.set_caption("Gomoku Swap2: Game vs Bot (You are white)")
+            pygame.display.set_caption("Gomoku Balanced: Game vs Bot (You are white)")
         s.game_loop()
 
     pygame.display.flip()
